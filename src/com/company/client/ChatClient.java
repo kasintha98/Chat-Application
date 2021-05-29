@@ -9,12 +9,12 @@ public class ChatClient {
         Client client = new Client();
         client.start();
 
-
+        //client entering custom messages
         String userMsg ="";
 
         while(!userMsg.equals("exit")){
             Scanner msg = new Scanner(System.in);
-            System.out.println("Enter message (type 'exitx): ");
+            System.out.println("Enter message (type 'exit' to exit): ");
 
             userMsg = msg.nextLine();
 

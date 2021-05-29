@@ -14,7 +14,7 @@ public class ClientHandler implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.sleep(20000); //wait for 20 seconds before executing rest of the code
+            Thread.sleep(3000); //wait for 20 seconds before executing rest of the code
 
             //receive data from com.company.client
             InputStream inputStream = client.getInputStream();
