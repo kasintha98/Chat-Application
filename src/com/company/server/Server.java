@@ -5,15 +5,20 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-    public static void main(String[] args) throws IOException,InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Server running");
         ServerSocket serverSocket = new ServerSocket(6000);
         System.out.println("Server socket created..");
 
-        while(true){
+        int noOfClients = 0;
+        int clientLimit = 2;
+
+        while (true) {
+
 
             Socket client = serverSocket.accept();  //wait until com.company.client connects
             System.out.println("Server accepted a com.company.client.");
+
 
             ClientHandler clientHandler = new ClientHandler(client);
             Thread thread = new Thread(clientHandler);
@@ -29,7 +34,6 @@ public class Server {
 
         //commit code to git repo
         //loom screen record
-
 
 
     }
