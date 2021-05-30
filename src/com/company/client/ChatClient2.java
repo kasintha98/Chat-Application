@@ -18,11 +18,7 @@ public class ChatClient2 {
             userMsg = msg.nextLine();
 
             client.sendMessage(userMsg);
-            /*client.sendMessage("How are you?");
-            client.sendMessage("I'm fine");
-            client.sendMessage("Thank you");
-            client.sendMessage("Ohh");
-            client.sendMessage("exit");*/
+
         }
 
         System.out.println("Client finished execution");

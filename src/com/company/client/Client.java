@@ -18,8 +18,11 @@ public class Client {
         this.bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
     }
 
+    //MsgDecoder class new object
+    MsgDecoder msgDecoder = new MsgDecoder();
+
     public void sendMessage(String message) throws  IOException{
-        System.out.println("Client says: "+  message);
+        System.out.println("Client says: "+  msgDecoder.decodeMsg(message));
         this.outputStream.writeBytes(message+ "\n");
         String dataFromServer = this.bufferedReader.readLine();
         System.out.println("Server says: "+dataFromServer);

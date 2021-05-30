@@ -1,6 +1,8 @@
 package com.company.client;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.Scanner;
 
 public class ChatClient {
@@ -18,12 +20,10 @@ public class ChatClient {
 
             userMsg = msg.nextLine();
 
-            client.sendMessage(userMsg);
-            /*client.sendMessage("How are you?");
-            client.sendMessage("I'm fine");
-            client.sendMessage("Thank you");
-            client.sendMessage("Ohh");
-            client.sendMessage("exit");*/
+            //encoding user message
+            String encodedMsg = Base64.getEncoder().encodeToString(userMsg.getBytes());
+
+            client.sendMessage(encodedMsg);
         }
 
 
